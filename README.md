@@ -51,23 +51,37 @@ OpenShift Pipelines is provided as an add-on on top of OpenShift which can be in
 
 Create a project for the sample application that you will be using in this tutorial.
 
-```
+```bash
 oc new-project pipelines-tutorial
+```
+
+Building container images using build tools such as S2I, Buildah, Kaniko, etc require privileged access to the cluster. OpenShift default security setting does not allow privileged containers unless specifically configured. Create a service account for running pipelines and enable it to run privileged pods for building images:
+
+```
+oc create serviceaccount pipeline
+oc adm policy add-scc-to-user privileged -z pipeline
+oc adm policy add-role-to-user edit -z pipeline
 ```
 
 You will use the [Spring PetClinic](https://github.com/spring-projects/spring-petclinic) sample application during this tutorial which is a simple Spring Boot application. 
 
 Deploy the Spring PetClinic app on OpenShift using Source-to-Image which builds a container image from the application source code on GitHub and deploys it in the current namespace:
 
-```
+```bash
 oc new-app java~https://github.com/spring-projects/spring-petclinic
 oc expose svc/spring-petclinic
 ```
 
 You can also configure the application health probes so that Kubernetes doesn't sent any traffic to the pods before the application is started:
 
-```
+```bash
 oc set probe dc/spring-petclinic --readiness --liveness --get-url=http://:8080
+```
+
+Also set deployments for Spring PetClinic application to `manual` so that you can control the deployment workflow through a pipeline:
+
+```bash
+oc set triggers dc/spring-petclinic --manual
 ```
 
 You should be able to see the application running in the Web Console.
@@ -76,39 +90,57 @@ You should be able to see the application running in the Web Console.
 
 ## Install Tasks
 
-`Task`s consists of a number of steps that are executed sequentially, each in a separate container within the same pod. Here you can see a simple Task
+`Task`s consists of a number of steps that are executed sequentially, each in a separate container within the same pod. They can also have inputs and outputs in order to interact with other tasks in the pipeline. 
 
-```
+Here is an example of a Maven task for building a Maven-based Java application:
+
+```yaml
 apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
-  name: example-task
+  name: maven-build
 spec:
+  inputs:
+    resources:
+    - name: workspace-git
+      type: git
+  outputs:
+    resources:
+    - name: workspace-git
+      type: git
   steps:
-  - name: do-somnething
-    image: centos:7
-    command: ['echo']
-    args: 
-    - "Doing something"
-  - name: do-somnething-else
-    image: centos:7
-    command: ['echo']
-    args: 
-    - "Doing something else"
+  - name: build
+    image: maven:3.6.0-jdk-8-slim
+    command:
+    - /usr/bin/mvn
+    args:
+    - install
+```
 
+The Maven task starts a pod and runs a container inside that pod using the `maven:3.6.0-jdk-8-slim` image to run the specified commands. This task happen to have a single step, but tasks can have multiple steps and each runs inside a separate container within the same pod while having access to the same volumes in order to cache files, access configmaps, secrets, etc. The Maven task receives an input directory called `workspace-git` which is expected to contain the source code of the application. It also defines an output directory with the same name, in order to send the resulting artifacts to other tasks.
+
+Save the above YAML in a file and then create the task within your project:
+
+```shell
+oc create -f maven-build-task.yaml
 ```
 
 `Task`s are reusable and can be used in multiple pipelines. You can find more examples of re-usable `Task`s in the [catalog GitHub repository](https://github.com/tektoncd/catalog).
 
 Install the `buildah` and `openshift-cli` tasks from the catalog repository which you will use for creating a pipeline in the next section:
 
-```
+```shell
 oc create -f https://raw.githubusercontent.com/tektoncd/catalog/master/buildah/buildah.yaml
 oc create -f https://raw.githubusercontent.com/tektoncd/catalog/master/openshift-cli/openshift-client-task.yaml 
+oc create -f https://raw.githubusercontent.com/tektoncd/catalog/master/s2i/s2i-task.yaml 
 ```
 
 ## Create Pipeline
-TBD
+
+A `Pipeline` defines a number of tasks that should be executed and also how the tasks interact with each other via their inputs and outputs.
+
+```yaml
+```
 
 ## Trigger Pipeline
 TBD
