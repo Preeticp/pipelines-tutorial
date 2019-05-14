@@ -47,8 +47,65 @@ In the following sections, you will go through each of the above steps to define
 
 OpenShift Pipelines is provided as an add-on on top of OpenShift which can be installed via an operator that is available in the OpenShift OperatorHub. Follow [these instructions](install-operator.md) in order to install OpenShift Pipelines on OpenShift. 
 
+## Deploy Sample Application
+
+Create a project for the sample application that you will be using in this tutorial.
+
+```
+oc new-project pipelines-tutorial
+```
+
+You will use the [Spring PetClinic](https://github.com/spring-projects/spring-petclinic) sample application during this tutorial which is a simple Spring Boot application. 
+
+Deploy the Spring PetClinic app on OpenShift using Source-to-Image which builds a container image from the application source code on GitHub and deploys it in the current namespace:
+
+```
+oc new-app java~https://github.com/spring-projects/spring-petclinic
+oc expose svc/spring-petclinic
+```
+
+You can also configure the application health probes so that Kubernetes doesn't sent any traffic to the pods before the application is started:
+
+```
+oc set probe dc/spring-petclinic --readiness --liveness --get-url=http://:8080
+```
+
+You should be able to see the application running in the Web Console.
+
+![OpenShift Web Console](images/spring-petclinic-deployed.png)
+
 ## Install Tasks
-TBD
+
+`Task`s consists of a number of steps that are executed sequentially, each in a separate container within the same pod. Here you can see a simple Task
+
+```
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: example-task
+spec:
+  steps:
+  - name: do-somnething
+    image: centos:7
+    command: ['echo']
+    args: 
+    - "Doing something"
+  - name: do-somnething-else
+    image: centos:7
+    command: ['echo']
+    args: 
+    - "Doing something else"
+
+```
+
+`Task`s are reusable and can be used in multiple pipelines. You can find more examples of re-usable `Task`s in the [catalog GitHub repository](https://github.com/tektoncd/catalog).
+
+Install the `buildah` and `openshift-cli` tasks from the catalog repository which you will use for creating a pipeline in the next section:
+
+```
+oc create -f https://raw.githubusercontent.com/tektoncd/catalog/master/buildah/buildah.yaml
+oc create -f https://raw.githubusercontent.com/tektoncd/catalog/master/openshift-cli/openshift-client-task.yaml 
+```
 
 ## Create Pipeline
 TBD
