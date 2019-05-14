@@ -44,7 +44,8 @@ For further details on pipeline concepts, refer to the [Tekton documentation](ht
 In the following sections, you will go through each of the above steps to define and invoke a pipeline.
 
 ## Install OpenShift Pipelines
-TBD
+
+OpenShift Pipelines is provided as an add-on on top of OpenShift which can be installed via an operator that is available in the OpenShift OperatorHub. Follow [these instructions](install-operator.md) in order to install OpenShift Pipelines on OpenShift. 
 
 ## Install Tasks
 TBD
