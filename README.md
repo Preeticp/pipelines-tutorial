@@ -45,7 +45,9 @@ In the following sections, you will go through each of the above steps to define
 
 ## Install OpenShift Pipelines
 
-OpenShift Pipelines is provided as an add-on on top of OpenShift which can be installed via an operator that is available in the OpenShift OperatorHub. Follow [these instructions](install-operator.md) in order to install OpenShift Pipelines on OpenShift. 
+OpenShift Pipelines is provided as an add-on on top of OpenShift which can be installed via an operator that is available in the OpenShift OperatorHub. Follow [these instructions](install-operator.md) in order to install OpenShift Pipelines on OpenShift via the OperatorHub. 
+
+![OpenShift OperatorHub](images/operatorhub.png)
 
 ## Deploy Sample Application
 
