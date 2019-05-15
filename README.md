@@ -16,6 +16,14 @@ OpenShift Pipelines features:
 
 This tutorial walks you through pipeline concepts and how to create and run a simple pipeline for building and deploying a containerized app on OpenShift.
 
+In this tutorial you will:
+* [Learn about Tekton concepts](#concepts)
+* [Install OpenShift Pipelines via an Operator](#install-openshift-pipelines)
+* [Deploy Sample Application](#deploy-sample-application)
+* [Install Tasks](#install-tasks)
+* [Create a Pipeline](#create-pipeline)
+* [Trigger Pipeline](#trigger-pipeline)
+
 ## Prerequisite
 
 You need an OpenShift 4 cluster in order to complete this tutorial. If you don't have an existing cluster, go to http://try.openshift.com and register for free in order to get an OpenShift 4 cluster up and running on AWS within minutes.
@@ -133,7 +141,7 @@ Install the `buildah` and `openshift-cli` tasks from the catalog repository usin
 
 ```shell
 oc create -f https://raw.githubusercontent.com/tektoncd/catalog/master/buildah/buildah.yaml
-oc create -f https://raw.githubusercontent.com/tektoncd/catalog/master/openshift-cli/openshift-client-task.yaml 
+oc create -f https://raw.githubusercontent.com/tektoncd/catalog/master/openshift-cli/openshift-cli-task.yaml 
 oc create -f https://raw.githubusercontent.com/tektoncd/catalog/master/s2i/s2i-task.yaml 
 ```
 
@@ -198,8 +206,6 @@ This pipeline performs the following:
 5. The new application image is deployed on OpenShift using the `openshift-cli` task (`deploy` task name)
 
 You might have noticed that there are no references to the Spring PetClinic application in this this pipeline. That's because `Pipeline`s in Tekton are designed to be generic and re-usable for multiple applications and environments. `Pipeline`s abstract away the specifics of the Git source repository and image to be produced as `resource`s. When triggering a pipeline then you can provide different Git repositories and image registries to be used during pipeline execution. Be patient! You will do that in a little bit in next section.
-
-
 
 The tasks execution order is determined based on the dependencies that are defined between the tasks via `inputs` and `outputs`, as well as explicit orders that are defined via `runAfter`. For example
 * the `build-image` task will execute after the `build-app` task since it requires the Spring PetClinic JAR file that is created in the `build-app` task in order to build a container image of it, as defined via `inputs`
