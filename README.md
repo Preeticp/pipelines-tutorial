@@ -129,7 +129,7 @@ oc create -f maven-build-task.yaml
 
 `Task`s are reusable and can be used in multiple pipelines. You can find more examples of re-usable `Task`s in the [catalog GitHub repository](https://github.com/tektoncd/catalog).
 
-Install the `buildah` and `openshift-cli` tasks from the catalog repository which you will use for creating a pipeline in the next section:
+Install the `buildah` and `openshift-cli` tasks from the catalog repository using `oc` or `kubectl`, which you will need for creating a pipeline in the next section:
 
 ```shell
 oc create -f https://raw.githubusercontent.com/tektoncd/catalog/master/buildah/buildah.yaml
@@ -141,8 +141,77 @@ oc create -f https://raw.githubusercontent.com/tektoncd/catalog/master/s2i/s2i-t
 
 A `Pipeline` defines a number of tasks that should be executed and also how the tasks interact with each other via their inputs and outputs.
 
+I this tutorial, you will create a pipeline that takes the source code of Spring PetClinic application from GitHub and then builds and deploys it on OpenShift. 
+
+![OpenShift OperatorHub](images/pipeline-diagram.svg)
+
+Here is the YAML file that represents the above pipeline:
+
 ```yaml
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: build-pipeline
+spec:
+  resources:
+  - name: app-git
+    type: git
+  - name: app-image
+    type: image
+  tasks:
+  - name: build-app
+    taskRef:
+      name: maven-build
+    resources:
+      inputs:
+      - name: workspace-git
+        resource: app-git
+      outputs:
+      - name: workspace-git
+        resource: app-git
+  - name: build-image
+    taskRef:
+      name: s2i
+    resources:
+      inputs:
+      - name: workspace-git
+        resource: app-git
+        from: [build-app]
+      outputs:
+      - name: image
+        resource: app-image
+  - name: deploy
+    taskRef:
+      name: openshift-cli
+    runAfter:
+      - build-image
+    params:
+    - name: command
+      value: "rollout latest spring-petclinic"
 ```
+
+This pipeline performs the following:
+1. Clones the source code of the application from a Git repository (`app-git` resource)
+2. Builds the application JAR file using the `maven-builds` task defined earlier (`build-app` task name)
+3. Builds the container image using the `s2i` task which generates a Dockerfile for the application and uses [Buildah](https://buildah.io/) to build an image(`build-image` task name)
+4. The application image is pushed to an image registry (`app-image` resource)
+5. The new application image is deployed on OpenShift using the `openshift-cli` task (`deploy` task name)
+
+You might have noticed that there are no references to the Spring PetClinic application in this this pipeline. That's because `Pipeline`s in Tekton are designed to be generic and re-usable for multiple applications and environments. `Pipeline`s abstract away the specifics of the Git source repository and image to be produced as `resource`s. When triggering a pipeline then you can provide different Git repositories and image registries to be used during pipeline execution. Be patient! You will do that in a little bit in next section.
+
+
+
+The tasks execution order is determined based on the dependencies that are defined between the tasks via `inputs` and `outputs`, as well as explicit orders that are defined via `runAfter`. For example
+* the `build-image` task will execute after the `build-app` task since it requires the Spring PetClinic JAR file that is created in the `build-app` task in order to build a container image of it, as defined via `inputs`
+* the `deploy` task in this pipeline will execute after the `build-image` task completes since it's explicitly defined as such.
+
+Create the pipeline using `oc` or `kubectl`:
+
+```shell
+oc create -f build-pipeline.yaml
+```
+
+The pipeline is ready now. Let's go on and trigger it in the next section.
 
 ## Trigger Pipeline
 TBD

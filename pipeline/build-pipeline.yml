@@ -19,7 +19,7 @@ spec:
       outputs:
       - name: workspace-git
         resource: app-git
-  - name: s2i-gen-dockerfile
+  - name: build-image
     taskRef:
       name: s2i
     resources:
@@ -28,24 +28,8 @@ spec:
         resource: app-git
         from: [build-app]
       outputs:
-      - name: workspace-git
-        resource: app-git
-  - name: build-image
-    taskRef:
-      name: buildah
-    params:
-    - name: dockerfile
-      value: Dockerfile
-    - name: verifyTLS
-      value: "false"
-    resources:
-      inputs:
-      - name: workspace-git
-        resource: mapit-git
-        from: [s2i-gen-dockerfile]
-      outputs:
       - name: image
-        resource: mapit-image
+        resource: app-image
   - name: deploy
     taskRef:
       name: openshift-cli
