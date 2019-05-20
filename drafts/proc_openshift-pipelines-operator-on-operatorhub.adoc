@@ -26,17 +26,17 @@ NOTE: Alternatively you can use `oc` or `kubectl` to create the project. Use the
 
 . Click on **Integration & Delivery** category to find **OpenShift Pipeline Operator**.
 
-image::pipelines-tutorial/images/operatorhub.png[Operatorhub,300,align="center"]
+image::images/operatorhub.png[Operatorhub,300,align="center"]
 
 [start=3]
 . Click on **OpenShift Pipelines Operator** and then on **Install**
 
-image::pipelines-tutorial/images/operator-install.png[Pipeline Operator,300,align="center"]
+image::images/operator-install.png[Pipeline Operator,300,align="center"]
 
 [start=4]
 . Leave the default values in order to install the operator in the `pipelines` project and click on **Subscribe** in order to subscribe to the installation and update channels.
 
-image::pipelines-tutorial/images/operator-install-2.png[pipleines operator,300,align="center"
+image::images/operator-install-2.png[pipleines operator,300,align="center"]
 ![OpenShift Pipelines Operator](images/operator-install-2.png)
 
 NOTE: As soon as the operator installation is completed, you would see the status updated from `1 installing` to `1 installed`. This operator automates installation and updates of OpenShift Pipelines on the cluster and applies all configurations needed. 
