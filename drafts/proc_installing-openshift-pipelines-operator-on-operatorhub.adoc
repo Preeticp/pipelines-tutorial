@@ -38,19 +38,14 @@ image::images/operator-install-1.png[operator_install_1]
 image::images/operator-install-2.png[operator_install_2]
 
 NOTE: Once operator installation is complete, the status is updated from `1 installing` to `1 installed`. 
+
 NOTE: This operator automates installation and updates of OpenShift Pipelines on the cluster and applies all needed configurations. 
 
 [start=5]
 . Click on `1 installed` to go the installed operator to complete the OpenShift Pipelines installation process.
 
-[start=6]
 . Now that the operator is installed, you can click on **Create New** on **OpenShift Pipelines Install** in order to install OpenShift Pipelines.
 
-![OpenShift Pipelines Operator](images/operator-install-4.png)
-
-[start=7]
 . Leave the example `Install` CR as-as and click on **Create**.
 
-![OpenShift Pipelines Operator](images/operator-install-5.png)
-
-That's all. The operator now installs OpenShift Pipelines on the cluster.
+The operator now installs OpenShift Pipelines on the cluster.
