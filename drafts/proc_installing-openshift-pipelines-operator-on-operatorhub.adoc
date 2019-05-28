@@ -6,7 +6,7 @@
 = Installing the OpenShift pipelines operator
 
 OpenShift Pipelines can be installed by using an operator that is available in the OpenShift OperatorHub.
-
++
 NOTE: The operator is located in the Community OperatorHub.
 
 
