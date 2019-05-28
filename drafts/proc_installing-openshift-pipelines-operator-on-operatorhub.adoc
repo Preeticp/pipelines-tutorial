@@ -24,18 +24,9 @@ NOTE: Alternatively you can use `oc` or `kubectl` to create the project. Use the
 [start=2]
 . Go to **Catalog > OperatorHub** in the Web Console. A list of operators for OpenShift, provided by Red Hat as well as a community of partners and open-source projects is available.
 
-image::images/operatorhub.png[operatorhub]
-
-[start=3]
 . Click on **OpenShift Pipelines Operator** and then on click **Install**
-
-image::images/operator-install-1.png[operator_install_1]
-
-[start=4]
 . Select the default values to install the operator in the `pipelines` project.  
 . click on **Subscribe**.
-
-image::images/operator-install-2.png[operator_install_2]
 
 NOTE: Once operator installation is complete, the status is updated from `1 installing` to `1 installed`. 
 
