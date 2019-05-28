@@ -18,7 +18,7 @@ NOTE: The operator is located in the Community OperatorHub.
 .Procedure
 
 . In the Web Console, scroll down and create a project called `pipelines` by clicking on **Projects > Create Project**.
-
++
 NOTE: Alternatively you can use `oc` or `kubectl` to create the project. Use the command ``.
 
 [start=2]
@@ -27,9 +27,9 @@ NOTE: Alternatively you can use `oc` or `kubectl` to create the project. Use the
 . Click on **OpenShift Pipelines Operator** and then on click **Install**
 . Select the default values to install the operator in the `pipelines` project.  
 . click on **Subscribe**.
-
++
 NOTE: Once operator installation is complete, the status is updated from `1 installing` to `1 installed`. 
-
++
 NOTE: This operator automates installation and updates of OpenShift Pipelines on the cluster and applies all needed configurations. 
 
 [start=5]
