@@ -59,6 +59,7 @@ image::/drafts/images/openshift_pipelines_create_new.png[]
 . The **Create OpenShift Pipelines** editor screen will appear. Click **Create** to set the values.
 +
 image::/drafts/images/openshift_pipelines_crd_editor.png[]
+
 +
 NOTE:  The editor is pre-populated with definitions. Configure the file by manually entering YAML or JSON definitions into the editor.
 
@@ -66,7 +67,7 @@ NOTE:  The editor is pre-populated with definitions. Configure the file by manua
 +
 image::/drafts/images/openshift_pipelines_installed_operator.png[]
 
-.View the operator resources by selecting the **Overview** tab under **Installed Operators**.
+. View the operator resources by selecting the **Overview** tab under **Installed Operators**.
 +
 image::/drafts/images/openshift_pipelines_install_overview.png[]
 
