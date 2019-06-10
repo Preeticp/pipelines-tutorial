@@ -18,11 +18,8 @@ OpenShift Pipelines can be installed by using an operator that is available in t
 . Click **Create Project**.  A dialog box will appear.
 
 . Enter 'pipelines` in the name field and click **Create**.
----
-+
-NOTE: Alternatively you can use `oc` or `kubectl` to create the project.
 
-. Go to **Catalog > OperatorHub** in the Web Console. A list of operators for OpenShift, provided by Red Hat as well as a community of partners and open-source projects is available.
+. Go to **Catalog > OperatorHub** in the Web Console. A list of operators for OpenShift is provided.
 
 . Click on the **OpenShift Pipelines Operator** tile. 
 ---
@@ -35,7 +32,7 @@ NOTE: Use the **Filter by Keyword** box to facilitate the search of the Knative 
 
 . On the **Create the Operator Subscription** screen, go to the **Installation Mode** section and choose **A specific namespace on the cluster**.
 
-. Ensure the `openshift-operator` namespace is selected. Click **Subscribe**.
+. Ensure the `pipelines` namespace is selected. Click **Subscribe**.
 ---
 +
 NOTE: Selecting the default values will install the operator in all namespaces.
@@ -47,7 +44,7 @@ NOTE: Selecting the default values will install the operator in all namespaces.
 
 . Click the `1 installed` link.
 
-. Click  **Create New** to install the `OpenShift Pipelines` API. 
+. Click  **Create New** to install the `OpenShift Pipelines` Custom Resources (CR). 
 
 . The **Create OpenShift Pipelines** editor screen will appear. Click **Create** to set the values.
 ---
