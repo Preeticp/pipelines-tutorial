@@ -71,7 +71,7 @@ NOTE:  The editor is pre-populated with definitions. Configure the file by manua
 . OpenShift pipelines is now installed. Check on OpenShift Pipelines installation and operation by navigating to **Workloads > Pods**  and selecting the **Logs** tab.
 +
 image::/drafts/images/openshift_pipelines_installed_operator.png[]
-
++
 .Check on OpenShift Pipelines installation and operation by navigating to **Workloads > Pods**  and selecting the **Logs** tab.
 +
 image::/drafts/images/openshift_pipelines_install_overview.png[]
