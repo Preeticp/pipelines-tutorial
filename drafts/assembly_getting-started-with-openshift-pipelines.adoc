@@ -1,3 +1,0 @@
-// The following assembly is included in:
-//
-//
