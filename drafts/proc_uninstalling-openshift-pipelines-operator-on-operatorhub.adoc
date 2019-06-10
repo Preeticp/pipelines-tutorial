@@ -1,4 +1,4 @@
-= Deleting the Project and Uninstalling the OpenShift Pipelines Operator and 
+= Deleting the Project and Uninstalling the OpenShift Pipelines Operator
 
 == Deleting the Project
 
