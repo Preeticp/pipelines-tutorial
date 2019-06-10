@@ -65,14 +65,13 @@ image::/drafts/images/openshift_pipelines_create_new.png[]
 . The **Create OpenShift Pipelines** editor screen will appear. Click **Create** to set the values.
 +
 image::/drafts/images/openshift_pipelines_editor.png[]
-
 +
 NOTE:  The editor is pre-populated with definitions. Configure the file by manually entering YAML or JSON definitions, or by dragging and dropping a file into the editor.
 
 . OpenShift pipelines is now installed. Check on OpenShift Pipelines installation and operation by navigating to **Workloads > Pods**  and selecting the **Logs** tab.
 +
-image::/drafts/images/openshift_pipelines_installed_operator.png[osp installed operator]
+image::/drafts/images/openshift_pipelines_installed_operator.png[]
 
 .Check on OpenShift Pipelines installation and operation by navigating to **Workloads > Pods**  and selecting the **Logs** tab.
 +
-image::/drafts/images/openshift_pipelines_install_overview.png[osp install overview]
+image::/drafts/images/openshift_pipelines_install_overview.png[]
