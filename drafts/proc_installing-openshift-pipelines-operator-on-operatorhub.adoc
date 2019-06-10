@@ -12,17 +12,15 @@ OpenShift Pipelines can be installed by using an operator that is available in t
 
 .Procedure
 
-. In the Web Console, navigate to **Home > Projects** . 
+. In the Web Console, navigate to **Home > Projects**. Click **Create Project**
 +
 image::/drafts/images/openshift_pipelines_create_project.png[]
 
-. Click **Create Project**.  A dialog box will appear.
-
-. Enter `pipelines` in the name field and click **Create**.
+. In the dialog box that appears enter `pipelines` in the namefield and click **Create**.
 +
 image::/drafts/images/openshift_pipelines_create_name_project.png[]
 
-. Go to **Catalog > OperatorHub** in the Web Console. A list of operators for OpenShift is provided.
+. Go to **Catalog > OperatorHub** in the Web Console. A list of operators for OpenShift and Red Hat community operators  is provided.
 
 
 . Click on the **OpenShift Pipelines Operator** tile. 
