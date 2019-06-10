@@ -1,4 +1,4 @@
-.= Installing the OpenShift Pipelines Operator
+= Installing the OpenShift Pipelines Operator
 
 OpenShift Pipelines can be installed by using an operator that is available in the OpenShift OperatorHub. The procedure for installing the OpenShift Pipeline Operator entails first creating a subscription and then installing the relevant Custom Resources (CRs). 
 
