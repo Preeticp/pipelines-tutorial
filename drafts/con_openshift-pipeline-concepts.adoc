@@ -1,5 +1,5 @@
 [id="openshift-pipeline-concepts_{context}"]
-= OpenShift Pipeline concepts
+= OpenShift Pipelines concepts
 
 Tekton provides native Kubernetes resources for building and executing CD pipelines. 
 
@@ -37,6 +37,6 @@ The steps normally followed in invoking a Pipeline include:
 * Create a `PipelineRun` to instantiate and invoke the pipeline
 
 
-. Additional resources
+.Additional resources
 
 * For more information on pipeline concepts, see the link:https://github.com/tektoncd/pipeline/tree/master/docs#learn-more[Tekton documentation].
