@@ -44,7 +44,7 @@ The custom resources needed to define a pipeline are:
 * `TaskRun`: the result of running an instance of task
 * `PipelineRun`: the result of running an instance of pipeline, which includes a number of `TaskRun`s
 
-image::drafts/images/tekton-architecture.svg[Tekton Architecture]
+image::images/tekton-architecture.svg[Tekton Architecture]
 
 
 The following steps are involved in invoking a Pipeline:
