@@ -1,42 +1,57 @@
-// The following module is included in the following assembly:
-//
-// 
-
-[id='installing-openshift-pipelines-operator_{context}']
-= Installing the OpenShift pipelines operator
+= Installing the OpenShift Pipelines Operator
 
 OpenShift Pipelines can be installed by using an operator that is available in the OpenShift OperatorHub.
-+
-NOTE: The operator is located in the Community OperatorHub.
+
 
 
 .Prerequisites
 
-* An OpenShift 4 cluster is required for installation. Visit try.openshift.com for getting started information on setting up an OpenShift 4 cluster
+* An OpenShift 4 cluster is required for installation. Visit try.openshift.com for information on setting up an OpenShift 4 cluster.
 
+
+== Creating a Knative Serving Operator Subscription
 
 .Procedure
 
-. In the Web Console, scroll down and create a project called `pipelines` by clicking on **Projects > Create Project**.
-+
-NOTE: Alternatively you can use `oc` or `kubectl` to create the project. Use the command ``.
+. In the Web Console, navigate to **Home > Projects** . 
 
-[start=2]
+. Click **Create Project**.  A dialog box will appear.
+
+. Enter 'pipelines` in the name field and click **Create**.
+---
++
+NOTE: Alternatively you can use `oc` or `kubectl` to create the project.
+
 . Go to **Catalog > OperatorHub** in the Web Console. A list of operators for OpenShift, provided by Red Hat as well as a community of partners and open-source projects is available.
 
-. Click on **OpenShift Pipelines Operator** and then on click **Install**
-. Select the default values to install the operator in the `pipelines` project.  
-. click on **Subscribe**.
+. Click on the **OpenShift Pipelines Operator** tile. 
+---
 +
-NOTE: Once operator installation is complete, the status is updated from `1 installing` to `1 installed`. 
+NOTE: Use the **Filter by Keyword** box to facilitate the search of the Knative Serving operator in the catalog.  
+
+. A `Show Community Operator` dialog box will appear. Click **Continue** to proceed.
+
+. The **OpenShift Pipelines Operator** descriptor screen will appear. Click **Install**.
+
+. On the **Create the Operator Subscription** screen, go to the **Installation Mode** section and choose **A specific namespace on the cluster**.
+
+. Ensure the `openshift-operator` namespace is selected. Click **Subscribe**.
+---
 +
-NOTE: This operator automates installation and updates of OpenShift Pipelines on the cluster and applies all needed configurations. 
+NOTE: Selecting the default values will install the operator in all namespaces.
+ 
+. Confirm the subscription for the installation operator, by viewing the **Subscription Overview**. Observe as the **UPGRADE STATUS** goes for `1 installing` to `1 installed`.
 
-[start=5]
-. Click on `1 installed` to go the installed operator to complete the OpenShift Pipelines installation process.
 
-. Now that the operator is installed, you can click on **Create New** on **OpenShift Pipelines Install** in order to install OpenShift Pipelines.
+== Installing the OpenShift Pipelines Operator
 
-. Leave the example `Install` CR as-as and click on **Create**.
+. Click the `1 installed` link.
 
-The operator now installs OpenShift Pipelines on the cluster.
+. Click  **Create New** to install the `OpenShift Pipelines` API. 
+
+. The **Create OpenShift Pipelines** editor screen will appear. Click **Create** to set the values.
+---
++
+NOTE:  The editor is pre-populated with definitions. Configure the file by manually entering YAML or JSON definitions, or by dragging and dropping a file into the editor.
+
+. OpenShift pipelines is now installed. Check on OpenShift Pipleins installation and operation by navigating to **Workloads > Pods**  and selecting the **Logs** tab.

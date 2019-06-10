@@ -1,17 +1,37 @@
 [id="openshift-pipeline-concepts_{context}"]
 = OpenShift Pipeline concepts
 
-This paragraph is the concept module introduction and is only optional. Include it to provide a short overview of the module.
+Tekton provides native Kubernetes resources for building and executing CD pipelines. 
 
-The contents of a concept module give the user descriptions and explanations needed to understand and use a product.
+Tekton provides Kubernetes Custom Resource Definitions (CRD) for modelling CD pipelines. The CRDs provided by Tekton include: Pipeline, Task, PipelineRun, TaskRun, PipelineResource. 
+Pipeline
 
-* Look at nouns and noun phrases in related procedure modules and assemblies to find the concepts to explain to users.
-* Explain only things that are visible to users. Even if a concept is interesting, it probably does not require explanation if it is not visible to users.
-* Do not include any instructions to perform an action, such as executing a command. Action items belong in procedure modules.
+* A Pipeline is a collection of `PipelineResources`,` Parameters` and one or more `Task`s. In order for a Pipeline to interact with the outside world, it will probably need PipelineResources which will be given to Tasks as inputs and outputs.
 
-[discrete]
-== Additional resources
+Your Pipeline must declare the PipelineResources it needs in a resources section in the spec, giving each a name which will be used to refer to these PipelineResources in the Tasks.
 
-* A bulleted list of links to other material closely related to the contents of the concept module.
-* For more details on writing concept modules, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
-* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
+* Pipelines allow you to run a `Task` individually or as a part of a Pipeline. A task runs as a Pod on the Kubernetes cluster. Tekton pipelines include one or more Tasks with a Task consisting of one or more steps. Steps are a series of commands that are sequentially executed by the task
+* `PipelineRun` is used to run a `Pipeline`. `PipelineRun` initiates the creation of a `TaskRun` for each `Task` being run in the `Pipeline`.
+* `TaskRun` is auto-created by a `PipelineRun` for each `Task` in a `Pipeline`. `TaskRun` can also be manually created. This is done if a `Task` runs outside of a `Pipeline`.
+* `PipelineResources` provide input and output for a Pipeline’s subsequent Tasks. `PipelineResources` currently support Git Resources, Image Resources, Cluster Resources, and Storage Resources.
+
+Tekton defines a number of [Kubernetes custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) as building blocks in order to standardise pipeline concepts and provide a terminology that is consistent across CI/CD solutions. These custom resources (CR) are an extension to the Kubernetes which let users create and interact with these objects using `kubectl` and other Kubernetes tools.
+
+The custom resources needed to define a pipeline are:
+
+* `Task`: a reusable loosely-coupled number of steps that perform a specific task e.g building a container image
+* `Pipeline`: the definition of the pipeline and the `Task`s that it should perform
+* `PipelineResource`: inputs (e.g. git repository) and outputs (image registry) to and out of a pipeline or task
+* `TaskRun`: the result of running an instance of task
+* `PipelineRun`: the result of running an instance of pipeline, which includes a number of `TaskRun`s
+
+image::images/tekton-architecture.svg[Tekton Architecture]
+
+The steps normally followed in invoking a Pipeline include:
+
+* Create custom or install existing reusable `Tasks`
+* Create a `Pipeline` and `PipelineResource`s to define your applications delivery pipeline
+* Create a `PipelineRun` to instantiate and invoke the pipeline
+
+. Additional resources
+* For further details on pipeline concepts, refer to the link:https://github.com/tektoncd/pipeline/tree/master/docs#learn-more[Tekton documentation].
