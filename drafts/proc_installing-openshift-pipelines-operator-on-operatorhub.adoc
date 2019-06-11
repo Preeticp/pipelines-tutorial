@@ -12,7 +12,7 @@ OpenShift Pipelines can be installed by using an operator that is available in t
 
 .Procedure
 
-. In the Web Console, navigate to **Home > Projects**. Click **Create Project**
+. In the Web Console, navigate to **Home > Projects**. Click **Create Project**.
 +
 image::/drafts/images/openshift_pipelines_create_project.png[]
 
