@@ -59,7 +59,7 @@ image::/drafts/images/openshift_pipelines_create_new.png[]
 . The **OpenShift Pipelines Install** CR creator editor screen will appear. Ensure that the namespace is `pipelines`. Click **Create**.
 +
 image::/drafts/images/openshift_pipelines_operator_crd_editor.png[]
-
++
 NOTE:  The editor is pre-populated with definitions. Configure the file by manually entering YAML or JSON definitions into the editor.
 
 . OpenShift pipelines is now installed. Navigate to **Catalog > Installed** Operators to confirm the operator is installed. Click on `pipelines-install` to view the install status.
