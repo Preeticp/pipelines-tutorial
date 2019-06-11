@@ -52,7 +52,7 @@ image::/drafts/images/openshift_pipelines_subscription_installing.png[]
 +
 image::/drafts/images/openshift_pipelines_installed.png[]
 
-. Click **Create New** to create an instance of the **Openshift Pipelines Install** CRD, to install OpenShift Pipelines.
+. Click **Create New** to create an instance of the Openshift Pipelines install CRD, to install OpenShift Pipelines.
 +
 image::/drafts/images/openshift_pipelines_create_new.png[]
 
