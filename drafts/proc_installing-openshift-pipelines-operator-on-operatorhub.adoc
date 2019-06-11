@@ -62,7 +62,7 @@ image::/drafts/images/openshift_pipelines_operator_crd_editor.png[]
 +
 NOTE:  The editor is pre-populated with definitions. Configure the file by manually entering YAML or JSON definitions into the editor.
 
-. OpenShift pipelines is now installed. Navigate to **Catalog > Installed** Operators to confirm the operator is installed. Click on `pipelines-install` to view the install status.
+. OpenShift pipelines is now installed. Navigate to **Catalog > Installed Operators** to confirm the operator is installed. Click on `pipelines-install` to view the install status.
 +
 image::/drafts/images/openshift_pipelines_installed_operator.png[]
 
