@@ -4,17 +4,6 @@
 OpenShift Pipelines
 Tekton provides native Kubernetes resources for building and executing CD pipelines. 
 
-CD pipelines facilitate the automation of the software delivery process, by supportng  such as actions as initiating code builds, running automated tests, and deploying to a staging or production environment. Pipelines can be described in stages:
-
-* Source stage: A pipeline run is triggered by a source code repository. A change in code triggers a notification to the CI/CD tool, which runs the corresponding pipeline. 
-
-* Build stage: During this stage the source code and its dependencies are combinded to build a runnable instance. Failure to pass the build stage is an indicator of a fundemental error in the configuration of a project.
-
-* Test stage: Automated tests run to validate the correctness of code. Failure during the test stage exposes problems in the code. 
-
-* Deploly stage: This is the final stage, implemeneted once a built, runnable instance of code has passed all predefined tests.
-
-
 Tekton provides Kubernetes Custom Resource Definitions (CRD) for modelling CD pipelines. CRDs enable users to add custom objects to the Kubernetes cluster and use it like any other native Kubernetes object.A Resource is an endpoint in the Kubernetes API that allows users to store an API object of any kind and a Custom Resource allows users to create your own API objects and define your own kind just like Pod, Deployment, ReplicaSet etc. Custom Resource allows you to extend kubernetes capabilities by adding any kind of API object useful for your application. Custom Resource Definition is what you use to define a Custom Resource.
 
 The CRDs provided by Tekton include: Pipeline, Task, PipelineRun, TaskRun, PipelineResource. 
