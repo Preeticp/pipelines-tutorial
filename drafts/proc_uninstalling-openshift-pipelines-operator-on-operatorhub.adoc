@@ -4,7 +4,7 @@
 
 . In the Web Console, navigate to **Home > Projects** . 
 
-. Select the **pipelines** project, on the listed page. 
+. Select the `pipelines` project, on the listed page. 
 
 . Right click the menu icon on the **pipelines** row.
 
