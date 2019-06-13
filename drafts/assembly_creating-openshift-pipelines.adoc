@@ -2,34 +2,29 @@
 
 [id='creating-openshift-pipelines_{context}']
 = Creating OpenShift Pipelines
-
+include::modules/common-attributes.adoc[]
 :context: creating-openshift-pipelines
 
+This tutorial uses the link:https://github.com/spring-projects/spring-petclinic[Spring-PetClinic] sample application to demonstrate `Pipeline` concepts and how to create and run a simple `Pipeline` for building and deploying a containerized application on OpenShift. Any Maven based application can use this `Pipeline`.
 
-This paragraph is the assembly introduction. It explains what the user will accomplish by working through the modules in the assembly and sets the context for the user story the assembly is based on. Can include more than one paragraph. Consider using the information from the user story.
-
-[id='prerequisites-{context}']
-== Prerequisites
-
-* A bulleted list of conditions that must be satisfied before the user starts following this assembly.
-* You can also link to other modules or assemblies the user must follow before starting this assembly.
-* Delete the section title and bullets if the assembly has no prerequisites.
+For this tutorial, we first deploy the sample application on OpenShift, create `tasks` to be executed by the `Pipeline` and then create and run the `Pipeline` s
 
 
 include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 
 include::proc_defining-and-creating-pipeline-tasks.adoc[leveloffset=+1]
 
-include::proc_defining-and-creating-pipeline-resources.adoc[leveloffset=+1]
+include::proc_defining-and-creating-pipelineresources.adoc[leveloffset=+1]
 
 include::proc_assembling-a-pipeline.adoc[leveloffset=+1]
 
-
+////
 [id='related-information-{context}']
 == Related information
 
 * A bulleted list of links to other material closely related to the contents of the concept module.
 * For more details on writing assemblies, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
 * Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
+////
 
 :context: {parent-context-of-creating-openshift-pipelines}
