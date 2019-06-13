@@ -4,7 +4,7 @@
 
 .Procedure
 
-. In the Web Console, navigate to **Home > Projects** . 
+. In the OpenShift Web Console, navigate to **Home > Projects** . 
 
 . Select the `pipelines` project, on the listed page. 
 
