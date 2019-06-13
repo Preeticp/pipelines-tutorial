@@ -2,6 +2,8 @@
 
 == Deleting the Project
 
+.Procedure
+
 . In the Web Console, navigate to **Home > Projects** . 
 
 . Select the `pipelines` project, on the listed page. 
@@ -20,6 +22,8 @@
 
 
 == Uninstalling the Knative Serving Operator
+
+.Procedure
 
 . Go to **Catalog > OperatorHub** in the Web Console. 
 
