@@ -5,7 +5,7 @@
 == Prerequisites
 
 * You have installed OpenShift Pipelines<link to Joan’s install doc> using the OpenShift Pipeline Operator listed in the OpenShift OperatorHub. Once installed, it is applicable to the entire cluster.
-* You have installed Tekton CLI <Link to CLI docs>
+* You have installed the Tekton CLI <Link to CLI docs>
 
 [discrete]
 == Procedure

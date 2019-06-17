@@ -28,7 +28,7 @@ spec:
       name: petclinic-image
 ----
 
-. Create the `PipelineRun` as follows:
+. Create the `PipelineRun` by using the following command:
 +
 ----
 oc create -f petclinic-deploy-pipelinerun-.yaml

@@ -1,7 +1,7 @@
 [id="checking-pipeline-and-application-status_{context}"]
 = Checking pipeline and application status
 
-You can examine the logs for your `PipelineRuns` to verify its status.
+You can examine the logs for `PipelineRuns` to verify its status.
 
 [discrete]
 == Procedure

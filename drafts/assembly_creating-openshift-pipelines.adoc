@@ -7,7 +7,7 @@ include::modules/common-attributes.adoc[]
 
 This tutorial uses the link:https://github.com/spring-projects/spring-petclinic[Spring-PetClinic] sample application to demonstrate `Pipeline` concepts and how to create and run a simple `Pipeline` for building and deploying a containerized application on OpenShift. Any Maven based application can use this `Pipeline`.
 
-For this tutorial, we first deploy the sample application on OpenShift, create `tasks` to be executed by the `Pipeline` and then create and run the `Pipeline` s
+For this tutorial, we first deploy the sample application on OpenShift, create `Tasks` to be executed by the `Pipeline` and then create and run the `Pipeline` s.
 
 
 include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]

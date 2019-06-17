@@ -1,7 +1,7 @@
 [id="assembling-a-pipeline_{context}"]
 = Assembling a pipeline
 
-`Pipeline` s represent a CI/CD flow and are defined by the `Tasks` to be executed.  They specify how the `Tasks` interact with each other and their order of execution using the `inputs` , `outputs`, and the `run-After` parameters. They are designed to be generic and reusable in multiple applications and environments.
+A `Pipeline` represents a CI/CD flow and is defined by the `Tasks` to be executed.  It specifies how the `Tasks` interact with each other and their order of execution using the `inputs` , `outputs`, and the `run-After` parameters. It is designed to be generic and reusable in multiple applications and environments.
 
 [discrete]
 == Procedure
@@ -50,9 +50,9 @@ spec:
 This `Pipeline` performs the following tasks:
 
 * Clones the source code of the application from a Git repository (app-git resource).
-* Builds the container image using the s2i task which generates a Dockerfile for the application and uses Buildah to build an image.
+* Builds the container image using the S2I task which generates a Dockerfile for the application and uses Buildah to build an image.
 * The application image is then pushed to an image registry (app-image resource).
-* The new application image is deployed on OpenShift using the openshift-cli.
+* The new application image is deployed on OpenShift using the OpenShift-CLI.
 +
 Note that, the `Pipeline` YAML file contains no references to the PetClinic Git repository and its image in the registry. These are defined in the `PipelineResources`.
 +

@@ -5,7 +5,7 @@
 
 Every `Task` runs as a pod and each `step` runs in its own container within the same pod. Since they run within the same pod they have access to the same volumes to cache files, configmaps, and secrets. They use `inputs` parameters, for example, a git , and `outputs` parameters, for example, an image in a registry, to interact with other tasks.
 
-`Tasks` are reusable and can be used in multiple `Pipeline` s. For this tutorial, you create a Maven `Task` with a single step to build a Maven based application, and then add two reusable `tasks` from the link:https://github.com/tektoncd/catalog[*catalog*] repository.
+`Tasks` are reusable and can be used in multiple `Pipeline` s. For this tutorial, you create a Maven `Task` with a single step to build a Maven based application, and then add two reusable `Tasks` from the link:https://github.com/tektoncd/catalog[*catalog*] repository.
 
 [discrete]
 == Procedure
@@ -37,7 +37,7 @@ spec:
 +
 This `Task` starts a pod and runs a container inside that pod using the `maven:3.6.0-jdk-8-slim` image to run the specified commands. It receives an input directory called `workspace-git` which contains the source code of the application.
 +
-Only the requirement for a git repository is declared on the `Task` and not a specific git repository to be used. This allows `Tasks` to be reusable for multiple `Pipeline` s and purposes. For more examples of reusable `Tasks` see the link:https://github.com/tektoncd/catalog[Tekton Catalog] and link:https://github.com/openshift/pipelines-catalog[OpenShift Catalog] repositories.
+Only the requirement for a git repository is declared on the `Task` and not a specific git repository to be used. This allows `Tasks` to be reusable for multiple `Pipeline` s and purposes.
 
 .. Create the `Task` within your project:
 +
@@ -45,14 +45,14 @@ Only the requirement for a git repository is declared on the `Task` and not a sp
 oc create -f maven-build-task.yaml
 ----
 
-. Install the `s2i` and `openshift-cli` reusable `tasks` from the link:https://github.com/tektoncd/catalog[catalog repository], which contains a list of reusable `Tasks` for `Pipeline` s:
+. Install the `s2i` and `openshift-cli` reusable `Tasks` from the link:https://github.com/tektoncd/catalog[catalog repository], which contains a list of reusable `Tasks` for `Pipeline` s:
 +
 ----
 $ oc create -f https://raw.githubusercontent.com/tektoncd/catalog/master/openshift-client/openshift-client-task.yaml
 $ oc create -f https://raw.githubusercontent.com/openshift/pipelines-catalog/master/s2i-java8/s2i-java-8-task.yaml
 ----
 
-. Verify the `tasks` added to the `Pipeline` as follows:
+. Verify the `Tasks` added to the `Pipeline` as follows:
 +
 ----
 $ tkn task ls
@@ -63,11 +63,8 @@ openshift-client  10 secs ago
 s2i-java          11 secs ago
 ----
 
-////
+
 [discrete]
 == Additional resources
 
-* A bulleted list of links to other material closely related to the contents of the procedure module.
-* For more details on writing procedure modules, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
-* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
-////
+* For more examples of reusable `Tasks` see the link:https://github.com/tektoncd/catalog[Tekton Catalog] and link:https://github.com/openshift/pipelines-catalog[OpenShift Catalog] repositories.
