@@ -34,7 +34,7 @@ image::/drafts/images/openshift_pipelines_operator_tiles.png[]
 image::/drafts/images/openshift_pipelines_install_subscription.png[]
 
 . On the *Create the Operator Subscription* screen:
-.. Select a specific namespace on the cluster, in the *Installation Mode* section, 
+.. Select a *Specific namespace on the cluster*, in the *Installation Mode* section, 
 .. Select `pipelines` from the namespace drop-down list.
 .. Click Subscribe.
  
