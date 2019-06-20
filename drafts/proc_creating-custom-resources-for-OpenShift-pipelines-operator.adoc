@@ -7,8 +7,7 @@
 
 
 .Prerequisites
-
-
+* OpenShift Pipelines Operator 
 
 .Procedure
 
