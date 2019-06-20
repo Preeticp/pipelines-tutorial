@@ -34,6 +34,6 @@ image::/drafts/images/openshift_pipelines_installed_operator.png[]
 +
 image::/drafts/images/openshift_pipelines_install_overview.png[]
 
-.Check on OpenShift Pipelines Operator by navigating to *Workloads > Pods*.
+. Check on OpenShift Pipelines Operator by navigating to *Workloads > Pods*.
 +
 image::/drafts/images/openshift_pipelines_workloads_pods.png[]
