@@ -39,5 +39,3 @@ image::/drafts/images/openshift_pipelines_install_subscription.png[]
 .. Click Subscribe.
  
 . Confirm the subscription for the installation operator, by viewing the *Subscription Overview*. Observe as the *UPGRADE STATUS* goes for `0 installing` to `1 installed`.
-+
-image::/drafts/images/openshift_pipelines_subscription_installing.png[]
