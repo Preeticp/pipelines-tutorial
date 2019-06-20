@@ -1,0 +1,39 @@
+// This module is included in the following assembly:
+//
+// 
+
+[id=]
+= Creating Custom Resources for the OpenShift Pipelines Operator
+
+
+.Prerequisites
+
+
+
+.Procedure
+
+. Click the `1 installed` link.
++
+image::/drafts/images/openshift_pipelines_installed.png[]
+
+. Click *Create New* to create an instance of the Openshift Pipelines install CRD, to install OpenShift Pipelines.
++
+image::/drafts/images/openshift_pipelines_create_new.png[]
+
+. The *OpenShift Pipelines Install* Custom Resources editor screen will appear. Ensure that the namespace is `pipelines`. Click *Create*.
++
+image::/drafts/images/openshift_pipelines_operator_crd_editor.png[]
++
+NOTE:  The editor is pre-populated with definitions. Configure the file by manually entering YAML or JSON definitions into the editor.
+
+. OpenShift pipelines is now installed. Navigate to *Catalog > Installed Operators* to confirm the operator is installed. Click on `pipelines-install` to view the install status.
++
+image::/drafts/images/openshift_pipelines_installed_operator.png[]
+
+. View the Openshift Pipelines resources installed by the operator by selecting the *Overview* tab under *Installed Operators*.
++
+image::/drafts/images/openshift_pipelines_install_overview.png[]
+
+. Check on OpenShift Pipelines installation and operation by navigating to *Workloads > Pods*.
++
+image::/drafts/images/openshift_pipelines_workloads_pods.png[]
