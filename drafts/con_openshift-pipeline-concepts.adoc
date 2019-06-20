@@ -1,30 +1,25 @@
+// This module is included in the following assembly:
+//
+// 
+
 [id='openshift-pipeline-concepts_{context}']
 = OpenShift Pipeline Operator concepts
 
-OpenShift Pipelines provides cloud-native resources for building and executing CD pipelines and is based on the Tekton Pipelines project.
 
 The Custom Resource Definitions (CRDs) provided by OpenShift Pipelines include: `Task`,`Pipeline`,`PipelineRun`, `TaskRun`, and `PipelineResources`. 
 
-* `Task`:  A `Task` is the smallest configurable unit in the `Pipeline` and is essentially a function of inputs and  outputs that inform the `Pipeline` build. A `Task` can run individually or as a part of a `Pipeline`. A `Pipeline` includes one or more `Tasks`, with a `Task` consisting of one or more steps. Steps are a series of commands that are sequentially executed by the `Task`.
+* A `Task` is the smallest configurable unit in a `Pipeline` and is essentially a function of inputs and outputs that inform the `Pipeline` build. It can run individually or as a part of a `Pipeline`. A `Pipeline` includes one or more `Tasks`, with a `Task` consisting of one or more steps. Steps are a series of commands that are sequentially executed by the `Task`.
 
-* `Pipeline`: A `Pipeline` is a series of `Tasks` that are executed to build complex workflows that automate the build, deployment and delivery of applications. The `Pipeline` is a collection of `PipelineResources`,`Parameters` and one or more `Tasks`. A `Pipeline` interacts with the outside world, by using  `PipelineResources`, which are given to `Tasks` as inputs and outputs.
+* A `Pipeline` is a series of `Tasks` that are executed to build complex workflows that automate the build, deployment and delivery of applications. It is a collection of `PipelineResources`,`Parameters` and one or more `Tasks`. A `Pipeline` interacts with the outside world, by using `PipelineResources`, which are given to `Tasks` as inputs and outputs.
 
-* `PipelineRun`: A `PipelineRun` is used to run and manage the execution of the `Pipeline`.`PipelineRun` initiates the creation of a `TaskRun` for each `Task` being executed in the `Pipeline`.
+* A `PipelineRun` is used to run and manage the execution of the `Pipeline`. `PipelineRun` initiates the creation of a `TaskRun` for each `Task` being executed in the `Pipeline`.
 
-* `TaskRun`: A `TaskRun` results from running an instance of a `Task`. `TaskRun` is auto-created by a `PipelineRun` for each `Task` in a `Pipeline`. `TaskRun` can also be manually created if a `Task` runs outside of a `Pipeline`.
+*`TaskRun` is auto-created by a `PipelineRun` for each `Task` in a `Pipeline`and  results from running an instance of a `Task`. It can also be manually created if a `Task` runs outside of a `Pipeline`.
 
-* `PipelineResource`: `PipelineResources` are objects that are used as inputs and outputs for pipeline `Tasks`. For example, if an input is a Git repository and an output is a container image built from that Git repository, these are both classified as `PipelineResources`. `PipelineResources` currently support Git Resources, Image Resources, Cluster Resources, and Storage Resources.
+* `PipelineResources` are objects that are used as inputs and outputs for pipeline `Tasks`. For example, if an input is a Git repository and an output is a container image built from that Git repository, these are both classified as `PipelineResources`. `PipelineResources` currently support Git Resources, Image Resources, Cluster Resources, and Storage Resources.
 
 
 image::/drafts/images/tekton-architecture.svg[Tekton Architecture]
-
-
-The basic flow to invoke a `Pipeline` is:
-
-* Create custom or install existing reusable `Tasks`
-* Create a `Pipeline` and `PipelneResource`s to define the application delivery pipeline
-* Create a `PipelineRun` to instantiate and invoke the pipeline
-
 
 
 .Additional information
