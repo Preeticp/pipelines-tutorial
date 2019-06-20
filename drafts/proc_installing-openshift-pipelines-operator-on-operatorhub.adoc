@@ -1,3 +1,8 @@
+// Ths module is included in the following assembly:
+//
+// 
+
+[id=]
 = Installing the OpenShift Pipelines Operator
 
 OpenShift Pipelines can be installed by using the OpenShift Pipelines Operator indexed in the OpenShift OperatorHub. The procedure for installing the OpenShift Pipelines Operator entails first creating a subscription and then creating the relevant Custom Resources and Custom Resoure Definitions (CRDs). 
@@ -5,71 +10,34 @@ OpenShift Pipelines can be installed by using the OpenShift Pipelines Operator i
 
 .Prerequisites
 
-* An OpenShift 4 cluster is required for installation. Visit try.openshift.com for information on setting up an OpenShift 4 cluster.
+* An OpenShift 4 cluster is required for installation. Visit link:try.openshift.com[try.openshift.com] for information on setting up an OpenShift 4 cluster.
 
 
-== Creating a OpenShift Pipelines Operator Subscription
+== Installing the OpenShift Pipelines Operator Subscription
 
 .Procedure
 
-. In the OpenShift Web Console, navigate to **Home > Projects**. Click **Create Project**.
-+
-image::/drafts/images/openshift_pipelines_create_project.png[]
+. In the OpenShift Web Console, navigate to *Home > Projects*. Click *Create Project*.
 
-. In the dialog box that appears enter `pipelines` in the namefield and click **Create**.
+. In the *Create Project* dialog box, type `pipelines` as the name of the project and click *Create*.
 +
 image::/drafts/images/openshift_pipelines_create_name_project.png[]
 
-. Go to **Catalog > OperatorHub** in the Web Console. A list of operators for OpenShift and Red Hat community operators  is provided.
+. Navigate to *Catalog > OperatorHub*.
 
-
-. Click on the **OpenShift Pipelines Operator** tile. 
+. Use the *Filter by Keyword* box to facilitate the search of the OpenShift Pipelines Operator in the catalog. Click on the OpenShift Pipelines Operator tile.
 +
 image::/drafts/images/openshift_pipelines_operator_tiles.png[]
 
-+
-NOTE: Use the **Filter by Keyword** box to facilitate the search of the OpenShift Pipelines operator in the catalog.  
-
-. A `Show Community Operator` dialog box will appear. Click **Continue** to proceed.
-+
-image::/drafts/images/openshift_pipelines_show_community_operator.png[]
-
-. The **OpenShift Pipelines Operator** descriptor screen will appear. Click **Install**.
+. The *OpenShift Pipelines Operator* screen providing a brief description of the operator is displayed. Click *Install*.
 +
 image::/drafts/images/openshift_pipelines_install_subscription.png[]
 
-. On the **Create the Operator Subscription** screen, go to the **Installation Mode** section and choose **A specific namespace on the cluster**. Ensure the `pipelines` namespace is selected. Click **Subscribe**.
-+
-image::/drafts/images/pipelines_namespace.png[]
+. On the *Create the Operator Subscription* screen:
+.. Select a specific namespace on the cluster, in the *Installation Mode* section, 
+.. Select `pipelines` from the namespace drop-down list.
+.. Click Subscribe.
  
-. Confirm the subscription for the installation operator, by viewing the **Subscription Overview**. Observe as the **UPGRADE STATUS** goes for `1 installing` to `1 installed`.
+. Confirm the subscription for the installation operator, by viewing the *Subscription Overview*. Observe as the *UPGRADE STATUS* goes for `0 installing` to `1 installed`.
 +
 image::/drafts/images/openshift_pipelines_subscription_installing.png[]
-
-== Creating the OpenShift Pipelines operator Custom Resources
-
-. Click the `1 installed` link.
-+
-image::/drafts/images/openshift_pipelines_installed.png[]
-
-. Click **Create New** to create an instance of the Openshift Pipelines install CRD, to install OpenShift Pipelines.
-+
-image::/drafts/images/openshift_pipelines_create_new.png[]
-
-. The **OpenShift Pipelines Install** Custom Resources editor screen will appear. Ensure that the namespace is `pipelines`. Click **Create**.
-+
-image::/drafts/images/openshift_pipelines_operator_crd_editor.png[]
-+
-NOTE:  The editor is pre-populated with definitions. Configure the file by manually entering YAML or JSON definitions into the editor.
-
-. OpenShift pipelines is now installed. Navigate to **Catalog > Installed Operators** to confirm the operator is installed. Click on `pipelines-install` to view the install status.
-+
-image::/drafts/images/openshift_pipelines_installed_operator.png[]
-
-. View the Openshift Pipelines resources installed by the operator by selecting the **Overview** tab under **Installed Operators**.
-+
-image::/drafts/images/openshift_pipelines_install_overview.png[]
-
-. Check on OpenShift Pipelines installation and operation by navigating to **Workloads > Pods**.
-+
-image::/drafts/images/openshift_pipelines_workloads_pods.png[]
