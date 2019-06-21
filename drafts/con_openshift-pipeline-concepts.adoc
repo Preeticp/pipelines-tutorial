@@ -3,7 +3,7 @@
 // 
 
 [id='openshift-pipeline-concepts_{context}']
-= OpenShift Pipeline Operator concepts
+= OpenShift Pipelines Operator concepts
 
 
 The Custom Resource Definitions (CRDs) provided by OpenShift Pipelines include: `Task`,`Pipeline`,`PipelineRun`, `TaskRun`, and `PipelineResources`. 
