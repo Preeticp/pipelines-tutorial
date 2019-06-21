@@ -1,6 +1,3 @@
-// This module is included in the following assembly:
-//
-// 
 
 [id='openshift-pipeline-concepts_{context}']
 = OpenShift Pipelines Operator concepts
