@@ -1,16 +1,16 @@
 // This module is included in the following assembly:
 //
-// 
+// assembly_installing-openshift-pipelines-operator-support.adoc
 
-[id=]
+[id="creating-custom-resources-for-the-openshift-pipelines-opertaor_{context}"]
 = Creating Custom Resources for the OpenShift Pipelines Operator
 
 
 .Prerequisites
-* OpenShift Pipelines Operator 
+* A subscription to the OpenShift Pipelines Operator is required. For more information, see link:proc_installing-openshift-pipelines-operator.adoc[Installing the OpenShift Pipelines Operator]. 
+
 
 .Procedure
-
 . Click the *1 installed* link.
 +
 image::/drafts/images/openshift_pipelines_installed.png[]
