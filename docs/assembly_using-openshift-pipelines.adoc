@@ -1,0 +1,13 @@
+:parent-context-of-using-openshift-pipelines: {context}
+
+[id='using-openshift-pipelines_{context}']
+= Using OpenShift Pipelines
+
+:context: using-openshift-pipelines
+
+include::proc_triggering-and-running-a-pipeline.adoc[leveloffset=+1]
+
+include::proc_checking-pipeline-and-application-status.adoc[leveloffset=+1]
+
+
+:context: {parent-context-of-using-openshift-pipelines}
