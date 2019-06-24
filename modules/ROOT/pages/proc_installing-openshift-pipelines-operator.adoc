@@ -21,17 +21,17 @@ OpenShift Pipelines can be installed by using the OpenShift Pipelines Operator i
 
 . In the *Create Project* dialog box, type `pipelines` as the name of the project and click *Create*.
 +
-image::/modules/ROOT/assets/images/openshift_pipelines_create_name_project.png[]
+image::images/openshift_pipelines_create_name_project.png[]
 
 . Navigate to *Catalog > OperatorHub*.
 
 . Use the *Filter by Keyword* box to facilitate the search of the OpenShift Pipelines Operator in the catalog. Click on the OpenShift Pipelines Operator tile.
 +
-image::/modules/ROOT/assets/images/openshift_pipelines_operator_tiles.png[]
+image::images/openshift_pipelines_operator_tiles.png[]
 
 . The *OpenShift Pipelines Operator* screen providing a brief description of the operator is displayed. Click *Install*.
 +
-image::/modules/ROOT/assets/images/openshift_pipelines_install_subscription.png[]
+image::images/openshift_pipelines_install_subscription.png[]
 
 . On the *Create the Operator Subscription* screen:
 .. Select a *Specific namespace on the cluster*, in the *Installation Mode* section, 
