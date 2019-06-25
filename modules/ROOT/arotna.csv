@@ -1,7 +1,7 @@
 level,prefix,heading,slug,navtext
 1,*, Understanding OpenShift Pipelines, assembly_understanding-openshift-pipelines.adoc, Understanding OpenShift Pipelines
 2,**, Introduction to OpenShift Pipelines, con_introduction-to-openshift-pipelines.adoc, Introduction to OpenShift Pipelines
-2,**, OpenShift Pipelines Concepts, con_introduction-to-openshift-pipelines.adoc, OpenShift Pipelines Concepts
+2,**, OpenShift Pipelines Concepts, con_openshift-pipelines-concepts.adoc, OpenShift Pipelines Concepts
 1,*, Installing OpenShift Pipelines Support, assembly_installing-openshift-pipelines-operator-support.adoc, Installing OpenShift Pipelines Support
 2,**, Installing the OpenShift Pipelines Operator, proc_installing-openshift-pipelines-operator.adoc, Installing the OpenShift Pipelines Operator
 2,**, Creating Custom Resources, proc_creating-custom-resources-for-openshift-pipelines-operator.adoc, Creating Custom Resources
