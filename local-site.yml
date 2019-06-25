@@ -1,7 +1,7 @@
 site:
   title: OpenShift Pipelines
   url: https://joaedwar.github.io/pipelines-tutorial/
-  start_page: pipelines-tutorial::index
+  start_page: docs::index
 content:
   sources:
     - url: .
