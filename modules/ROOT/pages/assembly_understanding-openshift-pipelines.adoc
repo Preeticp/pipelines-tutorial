@@ -5,9 +5,11 @@
 
 :context: understanding-openshift-pipelines
 
-include::con_introduction-to-openshift-pipelines.adoc[leveloffset=+1]
+The following section introduces and explains OpenShift Pipelines and the concepts associated with it.
 
-include::con_openshift-pipeline-concepts.adoc[leveloffset=+1]
+// include::con_introduction-to-openshift-pipelines.adoc[leveloffset=+1]
+
+// include::con_openshift-pipeline-concepts.adoc[leveloffset=+1]
 
 
 :context: {parent-context-of-understanding-openshift-pipelines}
