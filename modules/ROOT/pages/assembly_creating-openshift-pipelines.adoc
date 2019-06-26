@@ -10,13 +10,13 @@ This tutorial uses the link:https://github.com/spring-projects/spring-petclinic[
 For this tutorial, we first deploy the sample application on OpenShift, create `Tasks` to be executed by the `Pipeline` and then create and run the `Pipeline` s.
 
 
-include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
+//include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 
-include::proc_defining-and-creating-pipeline-tasks.adoc[leveloffset=+1]
+//include::proc_defining-and-creating-pipeline-tasks.adoc[leveloffset=+1]
 
-include::proc_defining-and-creating-pipelineresources.adoc[leveloffset=+1]
+//include::proc_defining-and-creating-pipelineresources.adoc[leveloffset=+1]
 
-include::proc_assembling-a-pipeline.adoc[leveloffset=+1]
+//include::proc_assembling-a-pipeline.adoc[leveloffset=+1]
 
 ////
 [id='related-information-{context}']
