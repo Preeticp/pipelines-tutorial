@@ -5,9 +5,11 @@
 
 :context: using-openshift-pipelines
 
-include::proc_triggering-and-running-a-pipeline.adoc[leveloffset=+1]
+The following section demonstrates how to trigger and run pipelines as well as to check on the application status.
 
-include::proc_checking-pipeline-and-application-status.adoc[leveloffset=+1]
+// include::proc_triggering-and-running-a-pipeline.adoc[leveloffset=+1]
+
+// include::proc_checking-pipeline-and-application-status.adoc[leveloffset=+1]
 
 
 :context: {parent-context-of-using-openshift-pipelines}
