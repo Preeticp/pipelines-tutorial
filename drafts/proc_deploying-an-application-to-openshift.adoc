@@ -1,3 +1,7 @@
+// This module is included in the following assembly:
+//
+// assembly_using-pipelines.adoc
+
 [id="deploying-an-application-to-openshift_{context}"]
 = Deploying an application to OpenShift
 

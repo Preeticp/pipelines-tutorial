@@ -1,3 +1,7 @@
+// This module is included in the following assembly:
+//
+// assembly_using-pipelines.adoc
+
 [id="triggering-and-running-a-pipeline_{context}"]
 = Triggering and running a pipeline
 

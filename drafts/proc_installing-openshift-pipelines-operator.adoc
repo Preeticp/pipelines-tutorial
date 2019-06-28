@@ -1,19 +1,16 @@
-// Ths module is included in the following assembly:
+// This module is included in the following assembly:
 //
-// 
+// assembly_installing-openshift-pipelines-operator-support.adoc
 
-[id=]
-= Installing the OpenShift Pipelines Operator
+[id="installing-openshift-pipelines-operator_{context}"]
+= Installing OpenShift Pipelines Operator
 
-OpenShift Pipelines can be installed by using the OpenShift Pipelines Operator indexed in the OpenShift OperatorHub. The procedure for installing the OpenShift Pipelines Operator entails first creating a subscription and then creating the relevant Custom Resources and Custom Resoure Definitions (CRDs). 
+The procedure for installing the OpenShift Pipelines Operator entails first creating a subscription and then creating the relevant Custom Resources and Custom Resource Definitions (CRDs).
 
 
 .Prerequisites
 
 * An OpenShift 4 cluster is required for installation. Visit link:try.openshift.com[try.openshift.com] for information on setting up an OpenShift 4 cluster.
-
-
-== Installing the OpenShift Pipelines Operator Subscription
 
 .Procedure
 
@@ -29,13 +26,13 @@ image::/drafts/images/openshift_pipelines_create_name_project.png[]
 +
 image::/drafts/images/openshift_pipelines_operator_tiles.png[]
 
-. The *OpenShift Pipelines Operator* screen providing a brief description of the operator is displayed. Click *Install*.
+. The *OpenShift Pipelines Operator* screen, providing a brief description, of the operator is displayed. Click *Install*.
 +
 image::/drafts/images/openshift_pipelines_install_subscription.png[]
 
 . On the *Create the Operator Subscription* screen:
-.. Select a *Specific namespace on the cluster*, in the *Installation Mode* section, 
+.. Select a *Specific namespace on the cluster*, in the *Installation Mode* section.
 .. Select `pipelines` from the namespace drop-down list.
 .. Click Subscribe.
- 
-. Confirm the subscription for the installation operator, by viewing the *Subscription Overview*. Observe as the *UPGRADE STATUS* goes for `0 installing` to `1 installed`.
+
+. Confirm the subscription for the installation operator by viewing the *Subscription Overview*. Observe as the *UPGRADE STATUS* goes from `0 installing` to `1 installed`.

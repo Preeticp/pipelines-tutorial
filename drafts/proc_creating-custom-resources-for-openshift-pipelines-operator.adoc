@@ -2,12 +2,12 @@
 //
 // assembly_installing-openshift-pipelines-operator-support.adoc
 
-[id="creating-custom-resources-for-the-openshift-pipelines-opertaor_{context}"]
+[id="creating-custom-resources-for-the-openshift-pipelines-operator_{context}"]
 = Creating Custom Resources for the OpenShift Pipelines Operator
 
 
 .Prerequisites
-* A subscription to the OpenShift Pipelines Operator is required. For more information, see link:proc_installing-openshift-pipelines-operator.adoc[Installing the OpenShift Pipelines Operator]. 
+* A subscription to the OpenShift Pipelines Operator is required. For more information, see link:proc_installing-openshift-pipelines-operator.adoc[Installing the OpenShift Pipelines Operator].
 
 
 .Procedure
@@ -33,6 +33,6 @@ image::/drafts/images/openshift_pipelines_installed_operator.png[]
 +
 image::/drafts/images/openshift_pipelines_install_overview.png[]
 
-. Check on OpenShift Pipelines Operator by navigating to *Workloads > Pods*.
+. Check the status of OpenShift Pipelines Operator by navigating to *Workloads > Pods*.
 +
 image::/drafts/images/openshift_pipelines_workloads_pods.png[]

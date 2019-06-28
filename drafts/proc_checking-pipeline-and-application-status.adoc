@@ -1,3 +1,7 @@
+// This module is included in the following assembly:
+//
+// assembly_using-pipelines.adoc
+
 [id="checking-pipeline-and-application-status_{context}"]
 = Checking pipeline and application status
 

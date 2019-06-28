@@ -1,3 +1,7 @@
+// This module is included in the following assembly:
+//
+// assembly_using-pipelines.adoc
+
 [id="assembling-a-pipeline_{context}"]
 = Assembling a pipeline
 

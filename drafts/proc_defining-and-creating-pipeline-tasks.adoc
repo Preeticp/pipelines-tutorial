@@ -1,3 +1,7 @@
+// This module is included in the following assembly:
+//
+// assembly_using-pipelines.adoc
+
 [id="defining-and-creating-pipeline-tasks_{context}"]
 = Defining and creating pipeline tasks
 
